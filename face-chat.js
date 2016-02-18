@@ -6,7 +6,6 @@
  * Licensed under the MIT license.
  */
 
-
 //Done by N1Z (TonyFreire)
 const colors = require('colors');
 const open = require("open");
@@ -30,7 +29,7 @@ login({email: user_email, password: user_pass}, function callback (err, api) {
    
 });
 
-chat = function (api){ //Menu to chose what mode you want
+chat = function (api){ //Menu to choose what mode you want
     if (status==0){
         status = readlineSync.question("option?\n1- search friend\n2- listen\n3- Exit\n".bold.blue);
         if (status==1 || status==2 || status==3){}
@@ -89,27 +88,27 @@ list =function(api){ // wait and answer to any message
             switch(event.type) {
                 case "message":
                     if (event.body!==''){
-                        console.log(event.senderName+": "+event.body); 
+                        console.log(event.senderName.bold.red+": ".bold.red+event.body); 
 
                     }
                     if (event.attachments.length>0){
                         var photos = readlineSync.question("Photos? (n to cancel)\n".bold.blue);
                         
-                        if (photos ==='n'){
-                            status=0;
-                            return
-                        }
-                        for(i=0;i<event.attachments.length;i++){
+                        if (photos !=='n'){
+                           for(i=0;i<event.attachments.length;i++){
                                 
-                            open(event.attachments[i]['url']);
-                        }                       
+                            open(event.attachments[i]['url']); //open photos in a browser
+                        }  
+                        }
+                                             
                     }                              
                     var msg = readlineSync.question("answer? (n to cancel)\n".bold.blue);     
-                        if (msg ==='n'){
-                            status=0;
-                            return
+                        if (msg !=='n'){
+                            
+                            api.sendMessage(msg, event.threadID);   
+                            
                         }         
-                    api.sendMessage(msg, event.threadID);    
+                     
                     api.markAsRead(event.threadID, function(err) {
                         if(err) console.log(err);                                             
                     });
