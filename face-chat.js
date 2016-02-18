@@ -8,7 +8,6 @@ const InfiniteLoop = require('infinite-loop');
 var whil = new InfiniteLoop();
 var status=0;
 
-
 login({email: "YOUREMAIL", password: "PASS"}, function callback (err, api) {
     if(err) return console.error(err);
   
