@@ -14,18 +14,23 @@ const readlineSync = require('readline-sync');
 readlineSync._DBG_set_useExt(true);
 const login = require("facebook-chat-api");
 const InfiniteLoop = require('infinite-loop');
+const Delete = require('./change_modules.js');
 var whil = new InfiniteLoop();
 var status=0;
+Delete.clean(); //clean a line module
 
-login({email: "YOUREMAIL", password: "PASS"}, function callback (err, api) {
+var user_email = readlineSync.question("Email?: ".bold.blue);
+var user_pass = readlineSync.question("Password: ".bold.blue, {hideEchoBack: true});
+
+login({email: user_email, password: user_pass}, function callback (err, api) {
     if(err) return console.error(err);
   
-    whil.add(chat, api);
+    whil.add(chat, api); //infinite loop 
     whil.run();
    
 });
 
-chat = function (api){
+chat = function (api){ //Menu to chose what mode you want
     if (status==0){
         status = readlineSync.question("option?\n1- search friend\n2- listen\n3- Exit\n".bold.blue);
         if (status==1 || status==2 || status==3){}
@@ -48,7 +53,7 @@ chat = function (api){
     }
 }
 
-sendMsg =function (api){    
+sendMsg =function (api){  //search a friend and send a message  
     var name = readlineSync.question("What name? \n".bold.blue);
     api.getUserID(name, function(err, data) {
         if(err) return callback(err);                    
@@ -76,7 +81,7 @@ sendMsg =function (api){
     });
 }
 
-list =function(api){
+list =function(api){ // wait and answer to any message
     var stopListening = api.listen(function(err, event) {
 
 
@@ -113,7 +118,7 @@ list =function(api){
             }
                                  
         });
-        process.on('SIGINT', function() {
+        process.on('SIGINT', function() { // exit of listen mode, with ctrl-c, and go to Menu (chat) 
             console.log('\n');   
             status=0
             return   
@@ -122,5 +127,4 @@ list =function(api){
 
 
 }
-
 
