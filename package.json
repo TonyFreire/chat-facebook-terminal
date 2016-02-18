@@ -1,0 +1,32 @@
+{
+  "name": "chat-facebook-terminal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "face-chat.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TonyFreire/chat-facebook-terminal.git"
+  },
+  "keywords": [
+    "facebook",
+    "chat",
+    "terminal",
+    "node"
+  ],
+  "author": "TonyFreire",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TonyFreire/chat-facebook-terminal/issues"
+  },
+  "homepage": "https://github.com/TonyFreire/chat-facebook-terminal#readme",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "facebook-chat-api": "^1.0.6",
+    "infinite-loop": "^0.2.2",
+    "open": "0.0.5",
+    "readline-sync": "^1.3.1"
+  }
+}
