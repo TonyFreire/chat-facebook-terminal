@@ -1,3 +1,12 @@
+/*
+ * face-chat
+ * https://github.com/TonyFreire/chat-facebook-terminal
+ *
+ * Copyright (c) 2016 António Freire
+ * Licensed under the MIT license.
+ */
+
+
 //Done by N1Z (TonyFreire)
 const colors = require('colors');
 const open = require("open");
