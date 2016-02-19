@@ -29,6 +29,8 @@ $ node face-chat.js
 
 - Just wait for messages and answer if you want.
 - Use **ctrl-c** to go to the main menu.
+- If you have any type of problems use **ctrl-z** to exit.
+
 
 ### Now you have messenger in terminal!!!!!!!!!
 ### Enjoy!!!!!!!!!!!!!!!!!
