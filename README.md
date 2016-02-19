@@ -13,22 +13,25 @@ $ node face-chat.js
 
 ## Application
 
-#### two modes
+#### We have two modes
 
-###### Search mode
+###### 1. Search mode
 
  ![Image](https://raw.githubusercontent.com/TonyFreire/chat-facebook-terminal/master/images/Screen%20Shot%202016-02-18%20at%2022.15.29.png)
 
-1. Search name of your friend.
+1. Search by name.
 2.	Select the number of your friend.
-3. Write message
+3. Write message.
 
-###### Listen
+###### 2. Listen
 
 ![Image](https://raw.githubusercontent.com/TonyFreire/chat-facebook-terminal/master/images/Screen%20Shot%202016-02-18%20at%2022.18.35.png)
 
 - Just wait for messages and answer if you want.
 - Use **ctrl-c** to go to the main menu.
+
+### Now you have messenger in terminal!!!!!!!!!
+### Enjoy!!!!!!!!!!!!!!!!!
 
 
 
